@@ -15,16 +15,8 @@ build(){
 }
 
 main() {
-    build "modules/frontend-proxy" ../../../bettair_frontend/bettairapp/build/
-    build "modules/apiRest" ../../../bettair_backend/target/bettair-api-0.0.1-SNAPSHOT.jar
-    build "modules/IoTAgent" ../../../bettair_iot_agent/
-    build "modules/ngsi-proxy" ../../../bettair_ngsi_proxy/
-    build "modules/bet-devices" ../../../bettair_devices/
-    docker build -t cygnus-ngsi ${CURRENT_DIRECTORY}/modules/cygnus-ngsi/docker
-    docker build -t com.ateknea.bettair/keyrock:0.0.1 ${CURRENT_DIRECTORY}/modules/keystone/docker
-    docker build -t com.ateknea.bettair/wilma_api:0.0.1-SNAPSHOT  ${CURRENT_DIRECTORY}/modules/docker_wilma/docker_api
-    docker build -t com.ateknea.bettair/wilma_orion:0.0.1-SNAPSHOT  ${CURRENT_DIRECTORY}/modules/docker_wilma/docker_orion
-
+    #build "modules/frontend-proxy" ../../../adidas_frontEnd/build/
+    build "modules/modelname" ../../../adidas_backEnd/
 
 }
 
