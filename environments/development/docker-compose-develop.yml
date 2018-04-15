@@ -1,0 +1,29 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:3.4.4
+    container_name: bet-mongodb
+    volumes:
+        - /opt/bettair/mongo-db:/data/db
+    ports:
+      - "27017:27017"
+
+  #FRONTEND WITH NGNIX FOR REVERSE PROXY
+  frontend-proxy:
+    image: com.ateknea.bettair/frontend-proxy:0.0.1-SNAPSHOT
+    container_name: bet-frontend-proxy
+    depends_on:
+      - pep-api
+      - pep-orion
+    links:
+      - pep-orion
+      - pep-api
+      - keystone
+      - ngsi-proxy:ngsi-proxy
+      - apiRest
+      - bet-devices
+    ports:
+      - "80:8080"
+
+
+

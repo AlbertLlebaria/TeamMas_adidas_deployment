@@ -1,0 +1,135 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:3.4.4
+    container_name: bet-mongodb
+    volumes:
+        - /var/www/vhosts/bettaircities.net/demo/mongo-db:/data/db
+    restart: always
+
+  influxdb:
+    image: influxdb:1.5-alpine
+    container_name: bet-influx
+    volumes:
+      - /opt/bettair/influxdb:/var/lib/influxdb
+    environment:
+      - INFLUXDB_ADMIN_ENABLED=true
+    expose:
+      - "8086"
+      - "8083"
+
+   #IoT AGENT WITH UDP TRANSLATOR TO CONECT DEVICES TO THE PLATFORM
+  iotAgent:
+    image: com.ateknea.bettair/iot_agent:0.0.1-SNAPSHOT
+    container_name: bet-IoTAgent
+    depends_on:
+      - keystone
+    ports:
+      - "33333:33333/udp"
+    expose:
+      - "8989"
+    links:
+      - pep-orion:pep-orion
+      - keystone:keystone
+
+    #CYGNUS MODULE FOR STH
+  cygnus-ngsi:
+    image: cygnus-ngsi
+    container_name: cygnus-ngsi
+    expose:
+      - "8091"
+      - "5050"
+    links:
+      - mongo:bet-mongo
+
+
+  #CONTEXT BROKER
+  orion:
+    image: fiware/orion
+    container_name: orion
+    depends_on:
+      - mongo
+    links:
+      - mongo:bet-mongodb
+      - cygnus-ngsi:cygnus-ngsi
+    expose:
+      - "1026"
+    command: -dbhost mongo
+
+
+  #BETTAIR BACKEND API REST
+  apiRest:
+    image: com.ateknea.bettair/api:0.0.1-SNAPSHOT
+    container_name: bet-api
+    volumes:
+        - /var/www/vhosts/bettaircities.net/demo/images/maps:/opt/bettair/images/maps
+    depends_on:
+      - mongo
+    links:
+      - mongo:bet-mongodb
+    restart: always
+
+  #DEVICES API REST
+  bet-devices:
+    image: com.ateknea.bettair/bet-devices:0.0.1-SNAPSHOT
+    container_name: bet-devices
+    links:
+      - pep-orion
+      - influxdb
+    expose:
+      - "3001"
+
+  #NGSI PROXY TO ENABLE FRONEND SUBSCRIPTION
+  ngsi-proxy:
+    container_name: ngsi-proxy
+    image: com.ateknea.bettair/ngsi-proxy:0.0.1-SNAPSHOT
+    depends_on:
+      - orion
+    ports:
+      - "10000:10000"
+
+
+  frontend-proxy:
+    image: com.ateknea.bettair/frontend-proxy:0.0.1-SNAPSHOT
+    container_name: bet-frontend-proxy
+    depends_on:
+      - pep-api
+      - pep-orion
+    links:
+      - pep-orion
+      - pep-api
+      - keystone
+      - ngsi-proxy:ngsi-proxy
+      - apiRest
+      - bet-devices
+    restart: always
+    ports:
+      - "80:8080"
+
+  keystone:
+    image: com.ateknea.bettair/keyrock:1.0.0
+    container_name: keystone
+    ports:
+      - "5000:5000"
+
+  pep-orion:
+    image: com.ateknea.bettair/wilma_orion:0.0.1-SNAPSHOT
+    container_name: pep-orion
+    depends_on:
+      - orion
+      - keystone
+    links:
+      - orion
+    expose:
+      - "8001"
+
+  pep-api:
+    image: com.ateknea.bettair/wilma_api:0.0.1-SNAPSHOT
+    container_name: pep-api
+    depends_on:
+      - apiRest
+      - keystone
+    links:
+      - apiRest:api
+    expose:
+      - "8002"
