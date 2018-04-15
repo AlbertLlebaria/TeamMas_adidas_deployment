@@ -26,20 +26,14 @@
 {"_id":{"$oid":"5ad2d58033aeac4b9bfc4d15"},"type":"trousers","url":"https://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dw64c465a9/zoom/CW5085_21_model.jpg?sw=230\u0026strip=false"}
 {"_id":{"$oid":"5ad2d58033aeac4b9bfc4d14"},"type":"trousers","url":"https://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dw5834e908/zoom/CW1300_23_hover_model.jpg?sw=230\u0026strip=false"}
 {"_id":{"$oid":"5ad2d58033aeac4b9bfc4d16"},"type":"trousers","url":"https://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dw25e266b3/zoom/CE1817_23_hover_model.jpg?sw=230\u0026strip=false"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f17"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f18"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f19"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f1a"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f1c"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f1b"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f1d"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f1e"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f1f"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f20"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f21"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f22"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f23"},"type":"shoes"}
-{"_id":{"$oid":"5ad2d65aab611f4d9ab59f24"},"type":"shoes"}
+{"_id":{"$oid":"5ad2d65aab611f4d9ab59f17"},"type":"shoes" , "url": "http://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dw37dd31f4/zoom/CQ2218_02_hover_frv.jpg?sw=230&strip=false"}
+{"_id":{"$oid":"5ad2d65aab611f4d9ab59f18"},"type":"shoes", "url":"http://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dw4a90759a/zoom/CQ2632_02_hover_frv.jpg?sw=230&strip=false"}
+{"_id":{"$oid":"5ad2d65aab611f4d9ab59f19"},"type":"shoes", "url":"http://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dw474faa6b/zoom/CQ2783_02_hover_frv.jpg?sw=230&strip=false"}
+{"_id":{"$oid":"5ad2d65aab611f4d9ab59f1a"},"type":"shoes", "url":"http://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dw09ae1ab6/zoom/CQ1156_02_hover_frv.jpg?sw=230&strip=false"}
+{"_id":{"$oid":"5ad2d65aab611f4d9ab59f1c"},"type":"shoes", "url":"http://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dw3384b314/zoom/CQ2469_08_hover_frv.jpg?sw=230&strip=false"}
+{"_id":{"$oid":"5ad2d65aab611f4d9ab59f1b"},"type":"shoes","url":"http://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dw667b9ef2/zoom/CQ1069_02_hover_frv.jpg?sw=230&strip=false"}
+{"_id":{"$oid":"5ad2d65aab611f4d9ab59f1d"},"type":"shoes", "url": "http://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dwcd6f08a1/zoom/CQ1217_02_hover_frv.jpg?sw=230&strip=false"}
+{"_id":{"$oid":"5ad2d65aab611f4d9ab59f1e"},"type":"shoes" , "url":"http://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dwcf262784/zoom/CQ1129_02_hover_frv.jpg?sw=230&strip=false"}
 {"_id":{"$oid":"5ad2e6831b6846748be5979a"},"type":"t-shirt","url":"https://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dw5e0d697d/zoom/S98724_23_hover_model.jpg?sw=230\u0026strip=false"}
 {"_id":{"$oid":"5ad2e6831b6846748be5979b"},"type":"t-shirt","url":"https://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dwa7f616c0/zoom/CW0703_23_hover_model.jpg?sw=230\u0026strip=false"}
 {"_id":{"$oid":"5ad2e6831b6846748be5979c"},"type":"t-shirt","url":"https://www.adidas.es/dis/dw/image/v2/aagl_prd/on/demandware.static/-/Sites-adidas-products/default/dwd6b923ed/zoom/CV6724_23_hover_model.jpg?sw=230\u0026strip=false"}
