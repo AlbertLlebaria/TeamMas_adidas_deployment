@@ -15,7 +15,7 @@ build(){
 }
 
 main() {
-    #build "modules/frontend-proxy" ../../../adidas_frontEnd/build/
+    build "modules/frontend-proxy" ../../../addidas_frontEnd/build/
     build "modules/modelname" ../../../adidas_backEnd/
 
 }

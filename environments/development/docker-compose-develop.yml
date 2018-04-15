@@ -2,28 +2,28 @@ version: '3'
 services:
   mongo:
     image: mongo:3.4.4
-    container_name: bet-mongodb
+    container_name: mongodb
     volumes:
-        - /opt/bettair/mongo-db:/data/db
+        - /opt/adidas
     ports:
       - "27017:27017"
 
   #FRONTEND WITH NGNIX FOR REVERSE PROXY
   frontend-proxy:
-    image: com.ateknea.bettair/frontend-proxy:0.0.1-SNAPSHOT
-    container_name: bet-frontend-proxy
+    image: addidas_frontend/frontend-proxy:0.0.1-SNAPSHOT
+    container_name: frontend-proxy
     depends_on:
-      - pep-api
-      - pep-orion
+      - adidasApi
     links:
-      - pep-orion
-      - pep-api
-      - keystone
-      - ngsi-proxy:ngsi-proxy
-      - apiRest
-      - bet-devices
+      - adidasApi
     ports:
       - "80:8080"
 
-
+  adidasApi:
+    image: modelname:0.0.1-SNAPSHOT
+    container_name: modelname
+    depends_on:
+      - mongo
+    ports:
+      - "5000:5000"
 

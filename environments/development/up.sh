@@ -10,8 +10,6 @@ set -u
 
 main() {
 #   Deploy platform
-    docker-compose -f docker-compose-develop.yml up -d keystone
-    sleep 1m
     docker-compose -f docker-compose-develop.yml up
 }
 
